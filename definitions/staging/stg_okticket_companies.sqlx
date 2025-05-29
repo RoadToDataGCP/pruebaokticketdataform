@@ -29,12 +29,10 @@ SELECT
     CAST(sales AS FLOAT64) AS sales,
     CAST(employee_number AS FLOAT64) AS employee_number,
     CAST(company_size AS INT64) AS company_size,
-    verify_image_token,
     country_id,
     currency,
     distance_unit,
     CAST(distance_unit_price AS FLOAT64) AS distance_unit_price,
-    okt_card_provider_bussiness_token,
     CAST(group_id AS INT64) AS group_id,
     custom_id
 FROM ${ref('okticket_company_raw')}
