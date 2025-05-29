@@ -1,5 +1,5 @@
 config {
-    type: "incremental",
+    type: "table",
     schema: "golden_okticket",
     name: "gld_okticket_expenses",
     uniqueKey: ["_id"]

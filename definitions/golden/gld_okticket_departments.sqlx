@@ -1,8 +1,8 @@
 config {
   type: "table",
   schema: "golden_okticket",
-  name: "gld_okticket_company",
+  name: "gld_okticket_department",
   uniqueKey: ["_id"]
 }
 
-SELECT * FROM ${ref('stg_okticket_company')}
+SELECT * FROM ${ref('stg_okticket_department')}

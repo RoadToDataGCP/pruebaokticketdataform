@@ -1,7 +1,8 @@
 config {
-  type: "incremental",
+  type: "table",
   schema: "golden_okticket",
-  name: "gld_okticket_users"
+  name: "gld_okticket_users",
+  uniqueKey: ["_id"]
 }
 
 SELECT * FROM ${ref('stg_okticket_users')}
