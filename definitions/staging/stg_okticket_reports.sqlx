@@ -1,0 +1,25 @@
+config {
+  type: "table",
+  schema: "staging_okticket",
+  name: "stg_okticket_reports"
+}
+
+SELECT
+    _id,
+    CAST(id AS INT64) AS id,
+    CAST(user_id AS INT64) AS user_id,
+    CAST(company_id AS INT64) AS company_id,
+    CAST(status_id AS INT64) AS status_id,
+    CAST(department_id AS INT64) AS department_id,
+    CAST(workflow_id AS INT64) AS workflow_id,
+    CAST(created_by AS INT64) AS created_by,
+    name,
+    is_deleted,
+    CAST(created_at AS TIMESTAMP) AS created_at,
+    CAST(updated_at AS TIMESTAMP) AS updated_at,
+
+    -- limpiamos expenses: de "['id1', 'id2']" a "id1,id2"
+    REPLACE(REPLACE(REPLACE(expenses, "[", ""), "]", ""), "'", "") AS expenses
+
+FROM `r2d-interno-dev.raw_okticket.okticket_reports_raw`
+

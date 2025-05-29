@@ -1,30 +1,31 @@
 config {
   type: "table",
   schema: "staging_okticket",
-  name: "stg_okticket_expenses",
+  name: "stg_okticket_expenses"
 }
 
 SELECT
-  _id,
-  CAST(amount AS NUMERIC) AS amount,
-  category_id,
-  comments,
-  JSON_EXTRACT_SCALAR(company, '$.name') AS company_name,
-  company_id,
-  CAST(created_at AS TIMESTAMP) AS created_at,
-  created_by,
-  currency,
-  date,
-  department_id,
-  id,
-  integrity_hash,
-  name,
-  source,
-  status_id,
-  tax_model_id,
-  type_id,
-  CAST(updated_at AS TIMESTAMP) AS updated_at,
-  JSON_EXTRACT_SCALAR(user, '$.name') AS user_name,
-  user_id
-FROM
-  ${ref('okticket_expenses_raw')}
+    _id,
+    CAST(id AS INT64) AS id,
+    CAST(user_id AS INT64) AS user_id,
+    CAST(company_id AS INT64) AS company_id,
+    CAST(department_id AS INT64) AS department_id,
+    CAST(type_id AS INT64) AS type_id,
+    CAST(category_id AS INT64) AS category_id,
+    CAST(status_id AS INT64) AS status_id,
+    CAST(tax_model_id AS INT64) AS tax_model_id,
+    CAST(report_id AS INT64) AS report_id,
+    CAST(amount AS NUMERIC) AS amount,
+    name,
+    comments,
+    source,
+    created_by,
+    currency,
+    CAST(date AS TIMESTAMP) AS date,
+    CAST(created_at AS TIMESTAMP) AS created_at,
+    CAST(updated_at AS TIMESTAMP) AS updated_at,
+    integrity_hash,
+    combustible,
+    CAST(litros AS NUMERIC) AS litros,
+    huella_de_carbono
+FROM ${ref('okticket_expenses_raw')}
