@@ -10,7 +10,7 @@ SELECT
     CAST(company_id AS INT64) AS company_id,
     CAST(created_at AS TIMESTAMP) AS created_at,
     CAST(updated_at AS TIMESTAMP) AS updated_at,
-    CAST(deleted_at AS TIMESTAMP) AS deleted_at,
+    CAST(deleted_at AS string) AS deleted_at,
     CAST(workflow_id AS INT64) AS workflow_id,
     CAST(advance_payment_workflow_id AS INT64) AS advance_payment_workflow_id,
     CAST(travel_workflow_id AS INT64) AS travel_workflow_id

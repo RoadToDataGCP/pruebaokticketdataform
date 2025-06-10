@@ -19,7 +19,7 @@ SELECT
   CAST(tyc_checked AS INT64) AS tyc_checked,
   CAST(NULLIF(created_at, '') AS DATETIME) AS created_at,
   CAST(NULLIF(updated_at, '') AS DATETIME) AS updated_at,
-  CAST(NULLIF(deleted_at, '') AS DATETIME) AS deleted_at,
+  CAST(NULLIF(deleted_at, '') AS string) AS deleted_at,
   CAST(active_company AS INT64) AS active_company,
   CAST(active_department AS INT64) AS active_department,
   custom_id,
@@ -27,7 +27,7 @@ SELECT
   custom_id_3,
   language,
   CASE WHEN active = 'True' THEN TRUE ELSE FALSE END AS active,
-  CAST(NULLIF(last_login_date, '') AS DATETIME) AS last_login_date,
+  CAST(NULLIF(last_login_date, '') AS string) AS last_login_date,
   CAST(NULLIF(login_error_count, '') AS FLOAT64) AS login_error_count,
   CAST(skip_sso AS INT64) AS skip_sso,
   CAST(NULLIF(companies, '') AS INT64) AS companies
