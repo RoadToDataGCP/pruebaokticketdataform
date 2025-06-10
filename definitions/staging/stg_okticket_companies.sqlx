@@ -36,3 +36,4 @@ SELECT
     CAST(group_id AS INT64) AS group_id,
     custom_id
 FROM ${ref('okticket_company_raw')}
+
